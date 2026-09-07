@@ -2,6 +2,17 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Stack
+
+- **React Native + Expo** — Mobile framework
+- **Expo Router** — File-based navigation
+- **XState** — Client state management (state machines)
+- **Effect.ts** — Business logic, sync layer, backend services
+- **Expo SQLite** — Local persistence
+- **React Hook Form + Zod** — Forms and validation
+- **Reanimated + Gesture Handler** — Animations and gestures
+- **TanStack Query** — Server state
+
 ## Get started
 
 1. Install dependencies
