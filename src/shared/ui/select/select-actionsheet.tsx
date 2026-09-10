@@ -32,7 +32,7 @@ type IAnimatedPressableProps = React.ComponentProps<typeof Pressable> &
   MotionComponentProps<typeof Pressable, ViewStyle, unknown, unknown, unknown>;
 
 const AnimatedPressable = createMotionAnimatedComponent(
-  Pressable,
+  Pressable
 ) as React.ComponentType<IAnimatedPressableProps>;
 
 type IMotionViewProps = React.ComponentProps<typeof View> &
@@ -41,9 +41,11 @@ type IMotionViewProps = React.ComponentProps<typeof View> &
 const MotionView = Motion.View as React.ComponentType<IMotionViewProps>;
 
 const StyledMotionView = styled(MotionView, { className: "style" });
+// @ts-expect-error TS2590: nativewind styled produces overly complex union types for this component
 const StyledAnimatedPressable = styled(AnimatedPressable, {
   className: "style",
 });
+// @ts-expect-error TS2590: nativewind styled produces overly complex union types for this component
 const StyledScrollView = styled(ScrollView, {
   className: "style",
   contentContainerClassName: "contentContainerStyle",
@@ -337,7 +339,7 @@ const ActionsheetItemText = React.forwardRef<
   IActionsheetItemTextProps
 >(function ActionsheetItemText(
   { className, isTruncated, bold, underline, strikeThrough, size, ...props },
-  ref,
+  ref
 ) {
   return (
     <UIActionsheet.ItemText
@@ -485,7 +487,7 @@ const ActionsheetSectionHeaderText = React.forwardRef<
     highlight,
     ...props
   },
-  ref,
+  ref
 ) {
   return (
     <UIActionsheet.SectionHeaderText
@@ -511,7 +513,7 @@ const ActionsheetIcon = React.forwardRef<
   IActionsheetIconProps
 >(function ActionsheetIcon(
   { className, as: AsComp, size = "sm", ...props },
-  ref,
+  ref
 ) {
   if (AsComp) {
     return (

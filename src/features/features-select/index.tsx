@@ -1,3 +1,4 @@
+import { Fragment } from "react/jsx-runtime";
 import {
   Select,
   SelectTrigger,
@@ -30,12 +31,19 @@ export const FeaturesSelect = () => {
         <SelectBackdrop />
         <SelectContent>
           {featuresQuery.data.map((feat) => (
-            <SelectItem
-              key={feat}
-              label={feat}
-              value={feat}
-              onPress={() => toggleFeature(feat)}
-            />
+            <Fragment key={feat}>
+              <SelectItem
+                label={feat}
+                value={feat}
+                onPress={() => toggleFeature(feat)}
+              />
+
+              {selectedFeatures.includes(feat) ? (
+                <span>✅</span>
+              ) : (
+                <span>⛔</span>
+              )}
+            </Fragment>
           ))}
         </SelectContent>
       </SelectPortal>
